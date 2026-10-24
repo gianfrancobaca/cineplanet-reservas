@@ -1,0 +1,5 @@
+services:
+  reservas:
+    build: ./servicios/reservas
+    ports:
+      - "8000:8000"
