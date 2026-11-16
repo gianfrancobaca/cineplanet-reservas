@@ -6,8 +6,12 @@ services:
     depends_on:
       db:
         condition: service_healthy
-
-
+    environment:
+      DB_PORT: "5432"
+      DB_HOST: db
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_NAME: ${POSTGRES_DB}    
   db:
     image: postgres:18.6-trixie
     env_file: .env
